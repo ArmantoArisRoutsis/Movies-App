@@ -17,7 +17,6 @@
         <button>Search</button>
       </form>
     </div>
-    <h1>MOVIES</h1>
     <Movies v-if="movies" :movies="movies"/>
   </div>
 </template>

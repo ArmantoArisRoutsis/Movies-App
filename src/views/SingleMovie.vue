@@ -2,6 +2,7 @@
   <div v-if="movie">
     <h1>{{movie.Title}}</h1>
     <img :src="movie.Poster" alt="">
+    <p>{{movie.Plot}}</p>
   </div>
 </template>
 
