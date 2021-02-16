@@ -4,13 +4,12 @@
             <router-link :to="`/movie/${movie.imdbID}`" >
                 <article>
                     <div class="movie-image">
-                        <img :src="movie.Poster" alt="">
+                        <img :src="movie.Poster==='N/A'?'https://ih1.redbubble.net/image.195569260.8857/fposter,small,wall_texture,product,750x1000.u3.jpg':movie.Poster" alt="">
                     </div>
                     <div class="movie-info">
                         <h1>{{movie.Title}}</h1>
                         <p>{{movie.Year}} | {{movie.Type}}</p>
-                        <button @click.prevent="$store.commit('addToList',movie)">{{checkIfExists(movie)}} Watchlist</button>
-                        <button @click.prevent="thislod"></button>
+                        <button :style="`background-color:${checkIf(movie)}; transition:  0.3s ease-out;`" @click.prevent="$store.commit('addToList',movie)">{{checkIfExists(movie)}} Watchlist</button>
                     </div>
                 </article>
             </router-link>
@@ -20,33 +19,21 @@
 
 <script>
 export default {
-props:['movies'],
-methods: {
-    checkIfExists(movie){
-        let counter = 0;
-      // console.log(this.state.toWatch.includes(movie))
-      // if(!this.state.toWatch.includes(movie)){ 
-      //   this.state.toWatch.push(movie)
-      // }
-      this.$store.state.toWatch.forEach(each => {
-        if(each.imdbID===movie.imdbID){
-          counter++
+    props:['movies'],
+    methods: {
+        checkIfExists(movie){
+            let counter = 0;
+            this.$store.state.toWatch.forEach(each => {
+                each.imdbID===movie.imdbID&&counter++ });
+            return counter===0? "Add to":"Remove from"; 
+        },
+        checkIf(movie){
+            let counter = 0;
+            this.$store.state.toWatch.forEach(each => {
+                each.imdbID===movie.imdbID&&counter++ });
+            return counter===0? "rgb(70, 150, 156)":"tomato"; 
         }
-      });
-      if(counter===0){
-        return "Add to"
-      }
-      else{
-          return "Remove from"
-      }
-      
-    },
-    thislod(){
-        var lastname = localStorage.getItem("watchList");
-        console.log(lastname)
-        console.log(this.$store.state.toWatch)
-    }
-},
+    }       
 }
 </script>
 
@@ -78,6 +65,7 @@ methods: {
 
 .movie-container img{
     height: 300px;
+    max-width: 210px;
     object-fit: cover;
 }
 
@@ -88,5 +76,15 @@ methods: {
     margin-bottom: 20px;
     background: linear-gradient(to bottom,rgba(0, 0, 0, 0.8),rgba(174, 0, 255,0),rgba(174, 0, 255,0));
     max-width: 400px;
+}
+.movie-info{
+    position: relative;
+}
+.movie-info button{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 20px;
+    padding: 20px 20px;
 }
 </style>

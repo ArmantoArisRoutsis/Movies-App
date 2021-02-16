@@ -5,19 +5,17 @@ export default createStore({
     toWatch:[]
   },
   mutations: {
-    addToList({commit},movie){
+    addToList(state,movie){
       let counter = 0;
-      this.state.toWatch.forEach(each => {
-        if(each.imdbID===movie.imdbID){
-          counter++
-        }
-      });
+      state.toWatch.forEach(each => {
+        each.imdbID===movie.imdbID&&counter++
+      })
       if(counter===0){
-        this.state.toWatch.push(movie)
+        state.toWatch.push(movie)
       }else{
-        this.state.toWatch = this.state.toWatch.filter(each=> each.imdbID!==movie.imdbID)
+        state.toWatch = state.toWatch.filter(each=> each.imdbID!==movie.imdbID)
       }
-      localStorage.setItem("watchList",JSON.stringify(this.state.toWatch));
+      localStorage.setItem("watchList",JSON.stringify(state.toWatch));
     }
   },
   actions: {
