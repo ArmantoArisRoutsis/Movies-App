@@ -9,6 +9,8 @@
                     <div class="movie-info">
                         <h1>{{movie.Title}}</h1>
                         <p>{{movie.Year}} | {{movie.Type}}</p>
+                        <button @click.prevent="$store.commit('addToList',movie)">{{checkIfExists(movie)}} Watchlist</button>
+                        <button @click.prevent="thislod"></button>
                     </div>
                 </article>
             </router-link>
@@ -18,7 +20,33 @@
 
 <script>
 export default {
-props:['movies']
+props:['movies'],
+methods: {
+    checkIfExists(movie){
+        let counter = 0;
+      // console.log(this.state.toWatch.includes(movie))
+      // if(!this.state.toWatch.includes(movie)){ 
+      //   this.state.toWatch.push(movie)
+      // }
+      this.$store.state.toWatch.forEach(each => {
+        if(each.imdbID===movie.imdbID){
+          counter++
+        }
+      });
+      if(counter===0){
+        return "Add to"
+      }
+      else{
+          return "Remove from"
+      }
+      
+    },
+    thislod(){
+        var lastname = localStorage.getItem("watchList");
+        console.log(lastname)
+        console.log(this.$store.state.toWatch)
+    }
+},
 }
 </script>
 
@@ -26,11 +54,12 @@ props:['movies']
 .movies-wrapper{
     padding: 30px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit,minmax(410px,1fr));
     width: 95%;
     margin: 0 auto;
 }
 .movie-container{
+    margin: 0 auto;
     animation: card-animation;
     animation-duration: 3s;
 }

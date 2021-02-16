@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import SingleMovie from "../views/SingleMovie"
+import ToWatch from "../views/ToWatch.vue"
 
 const routes = [
   {
@@ -12,6 +13,11 @@ const routes = [
     path: '/movie/:id',
     name: 'SingleMovie',
     component: SingleMovie
+  },
+  {
+    path: '/watchlist/',
+    name: 'ToWatch',
+    component: ToWatch
   },
   {
     path: '/about',

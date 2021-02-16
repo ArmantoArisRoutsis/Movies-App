@@ -51,7 +51,7 @@ export default {
 
 <style>
 .featured-card a{
-  width: 1100px;
+  max-width: 90%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(300px,500px));
