@@ -39,9 +39,10 @@ export default {
   methods:{
     searchMovie(){
       if(this.search!==""){
-        axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=${env.apikey}&s=${this.search}`)
+        console.log("hello")
+        axios.get(`https://www.omdbapi.com/?i=tt3896198&apikey=${env.apikey}&s=${this.search}`)
         .then(res=>{
-          this.movies=res.data.Search
+          res?this.movies=res.data.Search:null
         })
       }
     }

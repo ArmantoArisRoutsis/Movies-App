@@ -49,7 +49,7 @@ export default {
 }
 
 .watch-card:hover{
-    width:90%;
+    width: 550px;
 }
 
 
