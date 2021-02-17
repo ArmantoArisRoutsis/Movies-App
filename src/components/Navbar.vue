@@ -8,7 +8,13 @@
         <h2 style="color:white;">{{$store.state.toWatch.length?$store.state.toWatch.length:0}} <span class="iconify" data-icon="mdi:movie-roll" data-inline="false"></span></h2>
       </router-link>
     </div>
-    <button class="theme-btn" @click="$store.commit('setTheme')">{{$store.state.darkTheme?"Light Theme":"Dark Theme"}}</button>
+    <div class="theme">
+      <h4>Light</h4>
+        <div @click="$store.commit('setTheme')" class="roll">
+          <button :style="$store.state.darkTheme&&'top:13px;'" class="theme-btn">{{$store.state.darkTheme?".":"."}}</button>
+        </div>
+      <h4>Dark</h4>
+    </div>
   </div>
 </template>
 
@@ -50,10 +56,12 @@ export default {
   color: #fffb15;
 }
 .to-watch-box{
+  position: fixed;
   padding: 5px;
   border: blueviolet 2px solid;
   background-color: rgb(61, 24, 95);
   border-radius: 3px;
+  right: 20px;
 }
 
 .nav button{
@@ -96,7 +104,32 @@ export default {
     text-shadow: 0px 0px 5px #EC5A5C;
   }
 }
+
+.theme{
+  position: absolute;
+  top: 12px;
+  right: 100px;
+}
 .theme-btn{
-    background: none;
+    position: absolute;
+    background: white;
+    width: 100%;
+    top: 0px;
+    border: none;
+    border-radius: 5px;
+    transition: 0.7s ease-out;
   }
+
+.theme .roll{
+  height: 30px;
+  width: 12px;
+  background:none;
+  border: white 1px solid;
+  border-radius: 10px;
+}
+
+.roll{
+  position: relative;
+  margin: 5px 0px 5px 25px;
+}
 </style>

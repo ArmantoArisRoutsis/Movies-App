@@ -55,7 +55,7 @@ export default {
   max-width: 90%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(300px,500px));
+  grid-template-columns: repeat(auto-fill,minmax(300px,3fr));
   background-color: rgba(2, 2, 2,0.7);
   animation: feature-card-animation;
   animation-duration: 1s;
