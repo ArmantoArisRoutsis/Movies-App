@@ -85,7 +85,7 @@ export default {
   animation-duration: 1.2s;
 }
 
-.search-box input,button{
+.search-box input, .search-box button{
   padding: 20px;
   border: rgb(144, 47, 255) 2px solid;
   background-color: rgba(0, 0, 0,0.8);

@@ -31,7 +31,10 @@ export default {
             let counter = 0;
             this.$store.state.toWatch.forEach(each => {
                 each.imdbID===movie.imdbID&&counter++ });
-            return counter===0? "rgb(70, 150, 156)":"tomato"; 
+            if(this.$store.state.darkTheme){
+                return counter===0? "#341C3D":"#DC8624"; 
+            }
+            return counter===0? "#24C4B5":"#E15759"; 
         }
     }       
 }
@@ -82,9 +85,10 @@ export default {
 }
 .movie-info button{
     position: absolute;
-    bottom: 0;
+    bottom: 3px;
     width: 100%;
     font-size: 20px;
-    padding: 20px 20px;
+    padding: 5px 30px;
+    border: none;
 }
 </style>

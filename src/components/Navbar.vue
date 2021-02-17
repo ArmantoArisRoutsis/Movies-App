@@ -1,5 +1,6 @@
 <template>
   <div class="nav" :class="$store.state.darkTheme&&'dark-nav'">
+    <h1>Movie<span :class="$store.state.darkTheme&&'dark'">Base</span></h1>
     <div>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -28,7 +29,7 @@ export default {
 .nav {
   position: fixed;
   width: 100%;
-  display: inline;
+  display: flex;
   left: 0;
   top: 0;
   padding: 30px;
@@ -52,5 +53,46 @@ export default {
 }
 .to-watch-box{
   align-self: flex-end;
+}
+
+.nav button{
+  right: 0px;
+}
+
+.nav h1 span{
+  color: #f5dc01;
+  transition: 0.5s ease-out;
+}
+
+.nav h1 span.dark{
+  color: #EC5A5C;
+  animation: base-animation 3s infinite ;
+}
+
+@keyframes base-animation{
+  0%{
+    text-shadow: 0px 0px 2px #EC5A5C;
+  }
+  15%{
+    text-shadow: 0px 0px 5px #EC5A5C;
+  }
+  30%{
+    text-shadow: 0px 0px 10px #EC5A5C;
+  }
+  45%{
+    text-shadow: 0px 0px 15px #EC5A5C;
+  }
+  60%{
+    text-shadow: 0px 0px 20px #EC5A5C;
+  }
+  75%{
+    text-shadow: 0px 0px 15px #EC5A5C;
+  }
+  90%{
+    text-shadow: 0px 0px 10px #EC5A5C;
+  }
+  100%{
+    text-shadow: 0px 0px 5px #EC5A5C;
+  }
 }
 </style>
