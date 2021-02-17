@@ -8,7 +8,7 @@
 
 ###### This application allows users to search movies and view relevant information. The users can also save movies to their "to-watch-list" and later on remove them if they wish to do so.
 
-###### The way the application saves data is by utilizing the local storage and by manipulating the way data is stored. Local storage allows us to save data in a plain text format.
+###### The way the application saves data is by utilizing the local storage and by manipulating the way data is stored.
 
 ## Technologies Used
 
@@ -16,6 +16,7 @@
 - ###### CSS
 - ###### Javascript
 - ###### Vue.js
+- ###### VueX
 
 ## Technical Information
 
