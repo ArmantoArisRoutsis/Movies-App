@@ -8,7 +8,7 @@
         <h2 style="color:white;">{{$store.state.toWatch.length?$store.state.toWatch.length:0}} <span class="iconify" data-icon="mdi:movie-roll" data-inline="false"></span></h2>
       </router-link>
     </div>
-    <button @click="$store.commit('setTheme')">theme</button>
+    <button class="theme-btn" @click="$store.commit('setTheme')">{{$store.state.darkTheme?"Light Theme":"Dark Theme"}}</button>
   </div>
 </template>
 
@@ -50,7 +50,10 @@ export default {
   color: #fffb15;
 }
 .to-watch-box{
-  align-self: flex-end;
+  padding: 5px;
+  border: blueviolet 2px solid;
+  background-color: rgb(61, 24, 95);
+  border-radius: 3px;
 }
 
 .nav button{
@@ -64,12 +67,12 @@ export default {
 
 .nav h1 span.dark{
   color: #EC5A5C;
-  animation: base-animation 3s infinite ;
+  animation: base-animation 5s infinite ;
 }
 
 @keyframes base-animation{
   0%{
-    text-shadow: 0px 0px 2px #EC5A5C;
+    text-shadow: 0px 0px 5px #EC5A5C;
   }
   15%{
     text-shadow: 0px 0px 5px #EC5A5C;
@@ -93,4 +96,7 @@ export default {
     text-shadow: 0px 0px 5px #EC5A5C;
   }
 }
+.theme-btn{
+    background: none;
+  }
 </style>
