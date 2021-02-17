@@ -30,8 +30,22 @@ export default {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
     transition: width 0.5s;
+    animation: watch-card-animation;
+    animation-duration: 1s;
 }
 
+@keyframes watch-card-animation{
+    0%{
+        opacity: 0;
+        width: 300px;  
+    }70%{
+        opacity: 0.7;
+        width: 510px;  
+    }100%{
+        opacity: 1;
+        width: 500px; 
+    }
+}
 .remove-btn{
     background-color: tomato;
     transition: 0.5s;

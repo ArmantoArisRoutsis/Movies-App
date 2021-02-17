@@ -1,10 +1,8 @@
 <template>
   <div class="nav" :class="$store.state.darkTheme&&'dark-nav'">
-    <h1>Movie<span :class="$store.state.darkTheme&&'dark'">Base</span></h1>
-    <div>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <router-link to="/">
+      <h1>Movie<span :class="$store.state.darkTheme&&'dark'">Base</span></h1>
+    </router-link>
     <div class="to-watch-box">
       <router-link to="/watchlist">
         <h2 style="color:white;">{{$store.state.toWatch.length?$store.state.toWatch.length:0}} <span class="iconify" data-icon="mdi:movie-roll" data-inline="false"></span></h2>

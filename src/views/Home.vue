@@ -72,6 +72,10 @@ export default {
   }
 }
 
+.featured-card img{
+  width: 92%;
+}
+
 .featured-card a,.details{
   text-decoration: none;
   color: white;
