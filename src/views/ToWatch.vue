@@ -60,7 +60,7 @@ export default {
     background-color: rgb(97, 104, 170);
 }
 .details-btn:hover{
-    background-color: rgb(41, 57, 88);
+    background-color: rgb(0, 110, 253);
 }
 .remove-btn{
     background-color: rgb(194, 62, 95);

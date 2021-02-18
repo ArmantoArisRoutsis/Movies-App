@@ -116,7 +116,7 @@ export default {
     width: 100%;
     top: 0px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     transition: 0.7s ease-out;
   }
 
@@ -126,6 +126,7 @@ export default {
   background:none;
   border: white 1px solid;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .roll{

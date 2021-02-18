@@ -1,13 +1,19 @@
 <template>
   <div class="home">
+     <h2 style="color:yellow;">Featured this week</h2>
     <div class="featured-card">
-      <router-link to="/movie/tt0409591">
-        <img src="https://i.pinimg.com/originals/e1/7b/5f/e17b5fbdd01ab46763846e1bb0d97751.jpg" alt="naruto-foto">
+      <router-link to="/movie/tt3032476">
+        <img src="https://alternativemovieposters.com/wp-content/uploads/2020/05/simoneferraro_saul.jpg" alt="naruto-foto">
         <div class="details">
-          <h3>Title</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-          Ipsa iusto nisi deserunt veritatis ad cupiditate, enim tempora doloribus. 
-          Tempore nostrum obcaecati a explicabo sed iusto non corporis perferendis. Quae, itaque.</p>
+          <h3>Better Call Saul</h3>
+          <p>Introducing Jimmy McGill. You may know him better as Saul Goodman, Walter White's slippery, resourceful lawyer in Breaking Bad.
+             When first we meet him it is a few years before he meets Walter White. He is a struggling lawyer in Albuquerque, New Mexico.
+              He mostly defends small-time crooks and represents people in civil liability claims. His brother, Charles "Chuck" McGill, is a 
+              senior partner at a prestigious Albuquerque law firm but hasn't left his house for several months due to a strange affliction. 
+              Jimmy is supporting him through bringing him groceries and the like. Jimmy has a dark, pre-lawyer past, being a small-time 
+              fraudster in Chicago before moving to Albuquerque to start over and work with at his brother's firm. We also meet Mike 
+              Ehrmantraut, ex-cop now working as a toll booth attendant at the courthouse parking lot. We see how Jimmy and Mike's stories 
+              converge and how Jimmy slowly becomes the Saul Goodman we know from Breaking Bad. </p>
         </div>
       </router-link>
     </div>
@@ -52,10 +58,10 @@ export default {
 
 <style>
 .featured-card a{
-  max-width: 90%;
+  max-width: 1000px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(300px,3fr));
+  grid-template-columns: repeat(auto-fill,minmax(300px, 450px));
   background-color: rgba(2, 2, 2,0.7);
   animation: feature-card-animation;
   animation-duration: 1s;
@@ -73,7 +79,8 @@ export default {
 }
 
 .featured-card img{
-  width: 92%;
+  width: 100%;
+  margin-top: 35px;
 }
 
 .featured-card a,.details{
