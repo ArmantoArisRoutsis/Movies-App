@@ -91,4 +91,33 @@ export default {
     padding: 5px 30px;
     border: none;
 }
+
+@media only screen and (max-width: 490px) {
+    .movies-wrapper{
+        display: inline;
+    }
+    .movie-container article{
+        grid-template-columns: 210px;
+        margin: 0 auto;
+        width: 210px;
+        margin-bottom: 30px;
+    }
+    .movie-container img{
+        width: 210px;
+    }
+    .movie-info button{
+        bottom: 0px;
+        padding: 20px 0px;
+    }
+    .movie-info h1{
+        position: absolute;
+        top: -300px;
+        background-color: rgb(0, 0, 0,0.8);
+    }
+    .movie-info p{
+        position: absolute;
+        bottom: 200px;
+        background-color: rgba(0, 0, 0,0.8);
+    }
+}
 </style>
