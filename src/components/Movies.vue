@@ -51,7 +51,7 @@ export default {
 .movie-container{
     margin: 0 auto;
     animation: card-animation;
-    animation-duration: 3s;
+    animation-duration: 1.5s;
 }
 @keyframes card-animation{
     0%{

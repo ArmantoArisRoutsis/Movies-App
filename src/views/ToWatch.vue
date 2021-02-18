@@ -1,6 +1,9 @@
 <template>
     <div class="watch-container">
-        <div v-for="movie in $store.state.toWatch" :key="movie">
+        <div v-if="$store.state.toWatch.length===0">
+            Nothing to watch
+        </div>
+        <div v-else v-for="movie in $store.state.toWatch" :key="movie">
         <article class="watch-card">
             <img :src="movie.Poster==='N/A'?'https://ih1.redbubble.net/image.195569260.8857/fposter,small,wall_texture,product,750x1000.u3.jpg':movie.Poster" alt="">
             <div class="details"> 

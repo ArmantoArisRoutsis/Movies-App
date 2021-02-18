@@ -57,11 +57,13 @@ export default {
 </script>
 
 <style>
+
 .featured-card a{
-  max-width: 1000px;
+  max-width: 900px;
+  width: 90%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(300px, 450px));
+  grid-template-columns: repeat(auto-fill,minmax(400px, 1fr));
   background-color: rgba(2, 2, 2,0.7);
   animation: feature-card-animation;
   animation-duration: 1s;
@@ -78,8 +80,20 @@ export default {
   }
 }
 
+@media only screen and (max-width: 680px) {
+  .search-box form input, .search-box form button{
+    margin: 0;
+    width: 90%;
+  }
+  .featured-card a{
+    grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
+    width: 95%;
+  }
+}
+
 .featured-card img{
   width: 100%;
+  margin: 0 auto;
   margin-top: 35px;
 }
 
@@ -88,6 +102,7 @@ export default {
   color: white;
   padding: 20px;
   text-align: left;
+  margin: 0 auto;
 }
 
 .search-box{
