@@ -96,4 +96,33 @@ export default {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(510px,1fr));
 }
+@media only screen and (max-width: 623px) {
+    .watch-container{
+        display: block;
+        width: 100%;
+    }
+    .watch-card{
+        display: inline-block;
+        width: 300px;
+        pointer-events: none;
+    }
+    
+    .watch-card button{
+        width: 100%;
+    }
+
+    @keyframes watch-card-animation{
+    0%{
+        opacity: 0;
+        transform: translateX(-200px); 
+    }70%{
+        opacity: 0.7;
+        transform: translateX(20px);  
+    }100%{
+        opacity: 1;
+        transform: translateX(0px);  
+    }
+}
+    
+}
 </style>
