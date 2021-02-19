@@ -1,7 +1,7 @@
 <template>
     <div v-if="$store.state.toWatch.length===0">
         <h3  :style="!$store.state.darkTheme?'color:#fff':'color:#ffa200'">Nothing to watch</h3>
-        <img style="max-width:500px; width:80%;" src="Assets/empty.png" alt="">
+        <img class="empty-image" src="Assets/empty.png" alt="">
     </div>
     <h3  :style="!$store.state.darkTheme?'color:#ffff00':'color:#ffa200'" v-else>My Watchlist</h3>
     <div class="watch-container">
@@ -59,6 +59,26 @@ export default {
     border-radius: 4px;
     border: none;
     transition: 0.5s;
+}
+
+.empty-image{
+    max-width: 500px;
+    width: 80%;
+    animation: empty-img-animation;
+    animation-duration: 1s;
+}
+@keyframes empty-img-animation{
+    0%{
+        opacity: 0;
+        width: 0%;
+    }70%{
+        max-width: 600px;
+        width: 95%;
+    }
+    100%{
+        max-width: 500px;
+        width: 80%;
+    }
 }
 
 .details-btn{
