@@ -1,9 +1,11 @@
 <template>
+    <div v-if="$store.state.toWatch.length===0">
+        <h3  :style="!$store.state.darkTheme?'color:#fff':'color:#ffa200'">Nothing to watch</h3>
+        <img style="max-width:500px; width:80%;" src="Assets/empty.png" alt="">
+    </div>
+    <h3  :style="!$store.state.darkTheme?'color:#ffff00':'color:#ffa200'" v-else>My Watchlist</h3>
     <div class="watch-container">
-        <div v-if="$store.state.toWatch.length===0">
-            Nothing to watch
-        </div>
-        <div v-else v-for="movie in $store.state.toWatch" :key="movie">
+        <div v-for="movie in $store.state.toWatch" :key="movie">
         <article class="watch-card">
             <img :src="movie.Poster==='N/A'?'https://ih1.redbubble.net/image.195569260.8857/fposter,small,wall_texture,product,750x1000.u3.jpg':movie.Poster" alt="">
             <div class="details"> 
