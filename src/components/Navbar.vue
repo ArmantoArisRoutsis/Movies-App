@@ -58,8 +58,7 @@ export default {
 .to-watch-box{
   position: fixed;
   padding: 5px;
-  border: blueviolet 2px solid;
-  background-color: rgb(61, 24, 95);
+  border: rgb(255, 255, 255) 2px solid;
   border-radius: 3px;
   right: 20px;
 }

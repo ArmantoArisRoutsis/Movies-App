@@ -8,7 +8,7 @@
                     </div>
                     <div class="movie-info">
                         <h1>{{movie.Title}}</h1>
-                        <p>{{movie.Year}} | {{movie.Type}}</p>
+                        <p>{{movie.Year.length===5?`${movie.Year}present`:movie.Year}} | {{movie.Type}}</p>
                         <button :style="`background-color:${checkIf(movie)}; transition:  0.3s ease-out;`" @click.prevent="$store.commit('addToList',movie)">{{checkIfExists(movie)}} Watchlist</button>
                     </div>
                 </article>

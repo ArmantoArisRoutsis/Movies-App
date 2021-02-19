@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-     <h2 style="color:yellow;">Featured this week</h2>
+     <h2 :style="!$store.state.darkTheme?'color:#ffff00':'color:#ffa200'">Featured this week</h2>
     <div class="featured-card">
       <router-link to="/movie/tt3032476">
         <img src="https://alternativemovieposters.com/wp-content/uploads/2020/05/simoneferraro_saul.jpg" alt="naruto-foto">

@@ -8,7 +8,7 @@
             <img :src="movie.Poster==='N/A'?'https://ih1.redbubble.net/image.195569260.8857/fposter,small,wall_texture,product,750x1000.u3.jpg':movie.Poster" alt="">
             <div class="details"> 
                 <h1>{{movie.Title}}</h1>
-                <h3>{{movie.Type}} | {{movie.Year}}</h3>
+                <h3>{{movie.Type}} | {{movie.Year.length===5?`${movie.Year}present`:movie.Year}}</h3>
                 <button class="remove-btn" @click="$store.commit('addToList',movie)">Remove Movie</button>
                 <router-link :to="`/movie/${movie.imdbID}`"><button class="details-btn">View Details</button></router-link>
             </div>
@@ -104,7 +104,10 @@ export default {
     .watch-card{
         display: inline-block;
         width: 300px;
-        pointer-events: none;
+        margin-bottom: 1rem;
+    }
+    .watch-card:hover{
+        width: 300px;
     }
     
     .watch-card button{
